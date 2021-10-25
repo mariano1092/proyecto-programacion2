@@ -1,0 +1,11 @@
+<div th:fragment="_card" class="card shadow-lg p-3 mb-5 border border-2 rounded" style="max-width: 18rem;" >
+    <div style="width: 250px; height: 250px; overflow: hidden;">
+        <img th:src="@{'/images/' + ${libro.imagen}}" class="card-img-top" style="width: 100%; height: auto;" alt="Libro Imagen">
+    </div>
+    <div class="card-body">
+        <h5 class="card-title" th:text="${libro.titulo}">Titulo</h5>
+        <p class="card-text" th:text="${libro.descripcion}">Descripcion</p>
+        <a href="#" class="btn btn-dark"><span th:text="'$ '"></span> <span th:text="${libro.precio}"></span></a>
+        <a th:href="@{detalle/{id}(id=${libro.id})}" class="btn btn-outline-secondary btn-sm">Detalle</a>
+    </div>
+</div>
